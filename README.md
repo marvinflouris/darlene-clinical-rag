@@ -1,55 +1,23 @@
 # Clinical RAG System
 
-A production-grade, domain-specific Retrieval-Augmented Generation (RAG) architecture engineered for high-precision clinical information retrieval and decision support.
+A production-grade, domain-specific Retrieval-Augmented Generation (RAG) system designed for clinical document processing, indexing, and retrieval workflows.
 
-> **Why Clinical RAG?** Healthcare applications demand extreme precision. This system is designed to handle complex medical terminologies, hierarchical clinical data structures, and rigorous data context integrity, mitigating hallucinations in high-stakes environments.
-
----
-
-## 🏗️ System Architecture
-
-The project follows a modular pipeline design, separating data ingestion, indexing logic, and retrieval mechanisms to ensure scalability and testability:
+This project is configured to use `uv` as the package and environment manager. It keeps the environment lightweight and lets you install only the dependencies you need.
 
 ---
 
-## Key Features
+## Overview
 
-* **Domain-Adaptive Ingestion:** Tailored data parsing designed to handle clinical documents and structured medical hierarchies.
-* **Optimized LlamaIndex Pipeline:** Leverages advanced indexing abstractions to build, persist, and query vector spaces efficiently.
-* **Modular Extensibility:** Clean architectural separation allows seamless swapping of embedding models, vector backends, or retrieval strategies.
+The system follows a modular pipeline:
 
----
-
-## 🛠️ Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/RAG-CLINICAL.git
-cd RAG-CLINICAL
-```
-
-### 2. Create a Virtual Environment
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure Environment Variables
-Create a `.env` file with the required API keys and configuration values for your embedding model and LLM provider.
-
-### 5. Run the Application
-```bash
-python main.py
-```
+- clinical document ingestion
+- indexing and vector-store preparation
+- retrieval for grounded query answering
+- application entry point for running the workflow
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 .
@@ -62,15 +30,77 @@ python main.py
 │   ├── index_builder.py
 │   └── retriever.py
 ├── main.py
+├── pyproject.toml
 ├── requirements.txt
 ├── README.md
 ├── .env
 ├── .gitignore
-└── config.py
+├── config.py
+└── .venv/   # generated locally by uv when you initialize the environment
 ```
 
 ---
 
-## ⚠️ Notes
+## Using uv
 
-This repository is intended as a robust starting point for clinical RAG experimentation and production-oriented extension. It is designed for modular development and should be adapted to your required compliance, deployment, and evaluation standards.
+### 1. Install uv
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+If `uv` is already installed, skip this step.
+
+### 2. Create the environment
+
+```bash
+uv venv
+```
+
+This creates a local virtual environment without preinstalled dependencies.
+
+### 3. Install dependencies
+
+Add packages explicitly as needed:
+
+```bash
+uv add <package-name>
+```
+
+Or install from the project requirements file:
+
+```bash
+uv pip install -r requirements.txt
+```
+
+### 4. Run the project
+
+```bash
+uv run python main.py
+```
+
+### 5. Refresh the lockfile
+
+```bash
+uv lock
+```
+
+---
+
+## Environment Variables
+
+Create a local `.env` file for any API keys or sensitive settings you do not want committed to Git.
+
+Example:
+
+```env
+OPENAI_API_KEY=your_key_here
+```
+
+---
+
+## Notes
+
+- No local virtual environment is included. The `uv.lock` file records resolved versions but does not install packages by itself.
+- This project is intentionally minimal and ready for manual dependency installation with `uv`.
+- Do not commit environment files unless you explicitly want to share them.
