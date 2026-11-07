@@ -1,0 +1,6 @@
+# Facts about this PDF and the thresholds the scripts use.
+# Planned contents (values to be added once recorded in an ADR):
+#   - page offset between printed page and PDF page
+#   - fonts and sizes that mean "heading" in this book
+#   - header words that mark a treatment table (for example TREATMENT, LOC)
+#   - thresholds for sideways pages and nearly blank pages

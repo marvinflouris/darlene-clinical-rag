@@ -1,0 +1,7 @@
+# Your corrections to the book. Empty is fine: the pipeline runs without it
+# and lists unresolved items in data/reports instead.
+# Example format (commented out):
+# - find: "1.1.1 Common Cancers in Adults"
+#   page: 680
+#   set_number: "12.3.2"
+#   reason: typo in the book, seen on the page and in the contents list

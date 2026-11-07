@@ -1,0 +1,4 @@
+# Maps the labels printed in the book to one fixed list of section types.
+# Example format (commented out):
+# causes: [Cause, Causes]
+# investigations: [Investigation, Investigations]

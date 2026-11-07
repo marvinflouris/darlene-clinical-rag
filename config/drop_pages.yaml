@@ -1,0 +1,4 @@
+# PDF pages (or ranges) the pipeline skips on purpose, each with a reason.
+# Example format (commented out):
+# - pages: [453]
+#   reason: page says "This is a blank page"

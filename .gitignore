@@ -1,10 +1,32 @@
+# Local secrets and environments
 .env
 .venv/
 venv/
+
+# Python-generated files
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+
+# Keep directory markers, but do not commit source documents or generated data.
+data/*
+!data/raw/
+data/raw/*
+!data/raw/.gitkeep
+!data/work/
+data/work/*
+!data/work/.gitkeep
+!data/final/
+data/final/*
+!data/final/.gitkeep
+!data/reports/
+data/reports/*
+!data/reports/.gitkeep
+db/*
+!db/vector_store/
+db/vector_store/*
+!db/vector_store/.gitkeep
+
+# OS metadata
 .DS_Store
-storage/
-data/sample_docs/
