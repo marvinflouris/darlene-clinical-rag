@@ -16,8 +16,8 @@ Stage 1: design and parsing plan. The owner's five stages are:
 
 - Audited the structure of the UCG PDF: 1,161 pages, a readable text layer, no bookmarks, and printed page = PDF page minus 66.
 - Built a first condition list (generated, not yet reviewed): 477 entries and 70 section headings. 291 entries have their own ICD-10 code, 87 inherit one from a parent entry, and 99 have none. 172 entries carry at least one review flag.
-- Designed the chunk metadata: 18 fields in four groups ([schemas/chunk-metadata.md](schemas/chunk-metadata.md)).
-- Recorded the decisions as ADR-001 to ADR-025: 22 accepted and 3 proposed (ADR-017, 019, 020).
+- Designed the chunk metadata: 17 fields in four groups ([schemas/chunk-metadata.md](schemas/chunk-metadata.md)). The `population` field was dropped by ADR-026.
+- Recorded the decisions as ADR-001 to ADR-026: 23 accepted and 3 proposed (ADR-017, 019, 020). ADR-012 is partly replaced by ADR-026.
 - Created the repository skeleton, the README and the config placeholders.
 - Received the expert question sets: 30 target questions and 50 baseline questions. The expected answers are not filled in yet.
 - Drafted this documentation set.
