@@ -1,6 +1,6 @@
 # Chunk Metadata Specification
 
-Every chunk is one record holding `chunk_id`, `text` and 18 metadata fields in four groups. Every chunk has every field, but some values are empty. A field earns its place only if a pipeline or retrieval step uses it to find, connect, cite or check chunks (see ADR-012). Dropped fields and the reasons are in ADR-013.
+Every chunk is one record holding `chunk_id`, `text` and 17 metadata fields in four groups. Every chunk has every field, but some values are empty. A field earns its place only if a pipeline or retrieval step uses it to find, connect, cite or check chunks (see ADR-012). Dropped fields and the reasons are in ADR-013.
 
 ## Record basics
 
@@ -22,8 +22,10 @@ Every chunk is one record holding `chunk_id`, `text` and 18 metadata fields in f
 - `condition_title`: the condition's name as printed.
 - `parent_condition_id`: the `condition_id` of the bigger entry this one sits under, for example `malaria` for Uncomplicated Malaria. Empty if none.
 - `icd10`: a list of the ICD-10 code or codes printed on the heading, ranges kept as printed. A sub-entry with no code inherits the nearest parent's. Empty if none.
-- `population`: who the entry is for, taken from its heading (for example `children 2 months to 5 years`). `not stated` if the heading names no group, which is the usual case. Ages inside individual lines stay in the text.
+
 - `order_in_condition`: the chunk's position among all chunks of its condition, starting at 1. Filled in step 9.
+
+Patient group (age, pregnancy) is not a chunk field. Where the book splits a condition by group, the group is in `condition_title`. Otherwise it is in the chunk text (age lines, table columns). See ADR-026.
 
 ## Group 3: Shape (what role the chunk plays)
 
@@ -53,7 +55,6 @@ Every chunk is one record holding `chunk_id`, `text` and 18 metadata fields in f
   "condition_title": "Anaphylactic Shock",
   "parent_condition_id": null,
   "icd10": ["T78.2"],
-  "population": "not stated",
   "order_in_condition": 8,
   "section_type": "management",
   "chunk_type": "drug_line",

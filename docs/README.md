@@ -4,8 +4,12 @@
 - 01-vision-and-scope.md : what we are building, for whom, and what we are not building
 - 02-architecture.md : the big picture of how the system fits together
 - design/data-and-chunking.md : how the UCG becomes chunks
-- schemas/chunk-metadata.md : the 18 metadata fields and what each one means
+- schemas/chunk-metadata.md : the 17 metadata fields and what each one means
 - schemas/pipeline-files.md : which file each pipeline step reads and writes
 - adrs/ : one file per decision (Architecture Decision Records), with an index
+- ../AGENTS.md : rules for coding agents, in the repo root
+- agent-playbooks/ : procedures for ADRs, metadata, pipeline steps, hard tables, and handoff
+- agent-handoff.md : notes for the next coding session
+- agent-exceptions.md : log of approved changes to protected files
 - status.md : where we are now and what comes next
 - glossary.md : plain meanings of the terms we use

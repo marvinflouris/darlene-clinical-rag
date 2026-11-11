@@ -22,7 +22,7 @@ RUNTIME: planned (Stage 3)
 
 ## Offline: the data bank
 
-- **`chunks_all.jsonl`**: checked chunks with 18 metadata fields, ready to embed in the next stage ([chunk-metadata.md](schemas/chunk-metadata.md)).
+- **`chunks_all.jsonl`**: checked chunks with 17 metadata fields, ready to embed in the next stage ([chunk-metadata.md](schemas/chunk-metadata.md)).
 - **`lookups.sqlite`**: exact facts looked up by key: the condition list, the glossary, the lab menu, later the EMHSLU.
 - **`curated/`**: hand-made, expert-checked tables and the registry of hard tables. Tracked in Git because nothing can regenerate it.
 - Pointer chunks mark hard tables until they are ready.

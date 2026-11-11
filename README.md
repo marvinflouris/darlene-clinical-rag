@@ -115,6 +115,7 @@ There is no evaluation runner yet.
 - Current state and open questions: [docs/status.md](docs/status.md)
 - Decisions: [docs/adrs/README.md](docs/adrs/README.md)
 - Plain-language guide for newcomers: [docs/00-start-here.md](docs/00-start-here.md)
+- Rules for coding agents: [AGENTS.md](AGENTS.md)
 - Terms: [docs/glossary.md](docs/glossary.md)
 
 Some documents are placeholders until they are written. Decisions are recorded as ADRs (Architecture Decision Records). Old ADRs are never edited; a changed decision gets a new ADR that replaces the old one.

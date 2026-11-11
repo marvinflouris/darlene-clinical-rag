@@ -17,7 +17,7 @@ The UCG is a PDF made for printing. Conditions have headings, and inside each th
 ## The key ideas
 
 - **Chunk.** One small piece of the book that is stored and searched on its own.
-- **Metadata.** The facts stored with a chunk: its page, condition, section type and so on (18 fields).
+- **Metadata.** The facts stored with a chunk: its page, condition, section type and so on (17 fields).
 - **Parent and child.** A drug line is a small chunk (a child). Its whole table is the big chunk (the parent). Search finds the small one, and the model receives the big one for context.
 - **Condition record.** A container holding everything the book says about one condition. We cut chunks out of it.
 - **Hard tables.** Tables that rules cannot read reliably. They are prepared separately by vision models and experts. Until then a pointer chunk marks the spot, and Darlene says the table is not loaded yet.

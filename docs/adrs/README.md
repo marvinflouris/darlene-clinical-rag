@@ -20,7 +20,7 @@ Rules:
 - [ADR-009](ADR-009-condition-record-unit-of-work.md): The condition record is the unit of work from step 3 onward (accepted)
 - [ADR-010](ADR-010-own-condition-id.md): Our own condition_id, not the book's number and not ICD-10 (accepted)
 - [ADR-011](ADR-011-hard-tables-as-pointers.md): Hard tables are pulled out and left as pointer chunks (accepted)
-- [ADR-012](ADR-012-eighteen-metadata-fields.md): The 18 metadata fields in four groups (accepted)
+- [ADR-012](ADR-012-eighteen-metadata-fields.md): The 18 metadata fields in four groups (partly replaced by ADR-026)
 - [ADR-013](ADR-013-fields-dropped.md): Fields dropped from the chunk metadata, with reasons (accepted)
 - [ADR-014](ADR-014-applies-to-field.md): applies_to for blocks that serve several conditions (accepted)
 - [ADR-015](ADR-015-header-from-metadata.md): The chunk header is built from metadata, not written by an LLM (accepted)
@@ -34,3 +34,4 @@ Rules:
 - [ADR-023](ADR-023-docs-as-code-adrs.md): Documentation as Markdown in the repository; one ADR file per decision (accepted)
 - [ADR-024](ADR-024-file-types-by-role.md): File types are chosen by who writes and reads them (accepted)
 - [ADR-025](ADR-025-eleven-step-pipeline.md): An 11-step pipeline: each script reads the previous file and writes its own (accepted)
+- [ADR-026](ADR-026-drop-population-field.md): Drop population from the chunk metadata (accepted)

@@ -10,7 +10,7 @@ Plain meanings of the terms used in this project.
 
 **Applies to (`applies_to`).** A chunk field listing the conditions a chunk serves. Usually just its own condition. A management block shared by uncomplicated and severe malaria lists both.
 
-**Chunk.** One small piece of the book that is stored and searched on its own. It is a record with an ID, its text and 18 metadata fields.
+**Chunk.** One small piece of the book that is stored and searched on its own. It is a record with an ID, its text and 17 metadata fields.
 
 **Chunk type (`chunk_type`).** The kind of chunk: `text`, `drug_line`, `table_row`, `table` (a whole table) or `pointer`.
 
@@ -70,7 +70,7 @@ Plain meanings of the terms used in this project.
 
 **Pointer chunk.** A placeholder chunk left where a hard table sits, with a caption and page numbers. It says the table is not loaded yet, or points to the curated table.
 
-**Population.** Who a condition entry is for, taken from its heading (for example children aged 2 months to 5 years).
+**Population hint.** Words in a condition title that name a patient group (for example "Pneumonia in a Child of 2 months-5 years"). Kept in the condition list for the resolver. It is not a chunk field (ADR-026).
 
 **Prose.** Ordinary sentences and bullet lists, as opposed to tables.
 
