@@ -21,6 +21,7 @@ Stage 1: design and parsing plan. The owner's five stages are:
 - Created the repository skeleton, the README and the config placeholders.
 - Received the expert question sets: 30 target questions and 50 baseline questions. The expected answers are not filled in yet.
 - Drafted this documentation set.
+- Added agent guidance files: AGENTS.md, five playbooks, a handoff file and an exceptions log.
 
 ## Open decisions
 
