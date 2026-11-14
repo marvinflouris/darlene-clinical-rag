@@ -8,4 +8,4 @@ Format:
 
 ## Entries
 
-(none yet)
+- 2026-11-14 | AGENTS.md | Added the ADR-027 unrecognised-patterns design rule as requested | Owner

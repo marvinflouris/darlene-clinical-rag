@@ -35,3 +35,4 @@ Rules:
 - [ADR-024](ADR-024-file-types-by-role.md): File types are chosen by who writes and reads them (accepted)
 - [ADR-025](ADR-025-eleven-step-pipeline.md): An 11-step pipeline: each script reads the previous file and writes its own (accepted)
 - [ADR-026](ADR-026-drop-population-field.md): Drop population from the chunk metadata (accepted)
+- [ADR-027](ADR-027-report-unrecognised-patterns.md): Report unrecognised patterns instead of deciding silently (accepted)

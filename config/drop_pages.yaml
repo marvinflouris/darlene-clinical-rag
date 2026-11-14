@@ -1,4 +1,23 @@
-# PDF pages (or ranges) the pipeline skips on purpose, each with a reason.
-# Example format (commented out):
-# - pages: [453]
-#   reason: page says "This is a blank page"
+# PDF pages that produce no chunks. Ranges are inclusive [first, last].
+# The boundaries were checked by reading the first lines of the pages around them.
+
+- pages: [1, 3]
+  reason: cover and foreword
+
+- pages: [4, 20]
+  reason: table of contents (it has errors; headings are found from fonts instead)
+
+- pages: [21, 32]
+  reason: preface, acknowledgements, contributors and administrative support
+
+- pages: [453, 453]
+  reason: the page says "This is a blank page"
+
+- pages: [1161, 1161]
+  reason: back cover
+
+# Not dropped here:
+#   33-43   abbreviation list, turned into glossary records (settings.yaml)
+#   44-66   introduction, deferred (settings.yaml)
+#   image-only pages such as 936-940 (growth charts) and 1130: step 8 flags them
+#   and makes pointer chunks, as ADR-011 says

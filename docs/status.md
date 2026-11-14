@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-11-07
+Last updated: 2026-11-14
 
 ## Current stage
 
@@ -17,7 +17,8 @@ Stage 1: design and parsing plan. The owner's five stages are:
 - Audited the structure of the UCG PDF: 1,161 pages, a readable text layer, no bookmarks, and printed page = PDF page minus 66.
 - Built a first condition list (generated, not yet reviewed): 477 entries and 70 section headings. 291 entries have their own ICD-10 code, 87 inherit one from a parent entry, and 99 have none. 172 entries carry at least one review flag.
 - Designed the chunk metadata: 17 fields in four groups ([schemas/chunk-metadata.md](schemas/chunk-metadata.md)). The `population` field was dropped by ADR-026.
-- Recorded the decisions as ADR-001 to ADR-026: 23 accepted and 3 proposed (ADR-017, 019, 020). ADR-012 is partly replaced by ADR-026.
+- Recorded the decisions as ADR-001 to ADR-027: 24 accepted and 3 proposed (ADR-017, 019, 020). ADR-012 is partly replaced by ADR-026.
+- Wrote the config files with checked facts (settings, drop pages, section labels) and ADR-027 (report unrecognised patterns).
 - Created the repository skeleton, the README and the config placeholders.
 - Received the expert question sets: 30 target questions and 50 baseline questions. The expected answers are not filled in yet.
 - Drafted this documentation set.
@@ -34,13 +35,13 @@ Stage 1: design and parsing plan. The owner's five stages are:
 - Stage 3 choices: the LLM, the embedding model, the vector store, where parent chunks are stored, and the details of ADR-017, 019 and 020.
 - The frontend.
 - The license.
+- The dependency list and the Python version (agree the list, research the versions, let uv resolve them).
 
 ## Next steps
 
-1. Review the documents and commit them.
-2. Write the config files with real values: page offset, heading fonts, pages to drop, label variants, and an empty corrections file.
-3. Before parser design, revisit the hard-table plan: pointer chunks with curated_id, the practitioner reads the full table, and any vision-model simplification is done and checked in the preparation stage so the main LLM stays text-only.
-4. Write steps 1 to 3 of the pipeline with tests on the golden pages. Each step's plan is approved before code is written.
+1. Agree the dependency list and the Python version. Nothing is installed before this.
+2. Before parser design, revisit the hard-table plan: pointer chunks with curated_id, the practitioner reads the full table, and any vision-model simplification is done and checked in the preparation stage so the main LLM stays text-only.
+3. Write the plan for step 1 and get it approved. Code and tests follow phase by phase, with the review reports read after each step.
 
 ## Risks to watch
 
@@ -48,3 +49,4 @@ Stage 1: design and parsing plan. The owner's five stages are:
 - The two copies of section 9.2 may disagree on treatment. This must be settled before real clinicians use the tool.
 - Hard-table preparation depends on expert time.
 - Heading detection in the condition list is approximate and must be checked against page images.
+- A text style the config does not know about can put text in the wrong part without losing it. Steps 3, 5 and 10 report such cases (ADR-027).

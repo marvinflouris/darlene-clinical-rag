@@ -1,6 +1,76 @@
-# Facts about this PDF and the thresholds the scripts use.
-# Planned contents (values to be added once recorded in an ADR):
-#   - page offset between printed page and PDF page
-#   - fonts and sizes that mean "heading" in this book
-#   - header words that mark a treatment table (for example TREATMENT, LOC)
-#   - thresholds for sideways pages and nearly blank pages
+# Facts about the UCG PDF and the thresholds the scripts use.
+# Each value says how it was checked. Anything the scripts do not recognise
+# is listed in the review reports (ADR-027), so a missing fact shows up there.
+
+source_pdf: data/raw/ucg_2023.pdf        # assumed file name; change it if yours differs
+
+page_offset: 66                          # printed page = PDF page - 66 (checked on PDF pages 67, 68 and 1130)
+
+# Page ranges are inclusive [first, last] PDF pages (checked by reading the first lines of the boundary pages).
+pages:
+  front_matter: [1, 66]
+  chapters: [67, 1130]                   # chapters 1 to 24; PDF 1130 is an image-only page, handled by step 8
+  appendices: [1131, 1160]
+  back_cover: [1161, 1161]
+
+glossary_pages: [33, 43]                 # abbreviation list; step 4 turns it into glossary records
+lab_menu_pages: [1143, 1156]             # Appendix 3; step 11 reads it for the lookup tables, it is not chunked
+
+# Left out of the first run. Add them later by removing a line here.
+deferred_pages:
+  - pages: [44, 66]
+    what: introduction
+  - pages: [1131, 1142]
+    what: appendices 1 and 2
+  - pages: [1157, 1160]
+    what: appendix 4
+
+# Heading styles (from the whole-book scan). A heading must be bold, upright (not rotated)
+# and start with a number such as 1.1 or 1.1.1, up to four levels.
+# The number can sit on its own line with the title on the next line.
+heading_styles:
+  entry:                                 # a condition entry
+    - {font: BrandingSF-Bold, size: 10.0}
+    - {font: Verdana-Bold, size: 10.0}   # chapter 23 (dental)
+    - {font: BrandingSF-Bold, size: 9.0} # rare
+  group:                                 # a section heading that groups entries
+    - {font: BrandingSF-Bold, size: 11.5}
+
+# Styles used by section labels (Causes, Clinical features, Management ...).
+# From the whole-book count, about half use the first style and about 40% the second.
+label_styles:
+  - {font: BrandingSF-Bold, size: 9.0}
+  - {font: Souvenir-Bold, size: 9.5}
+  - {font: Souvenir-Bold, size: 9.9}
+  - {font: Souvenir-Bold, size: 9.0}
+  - {font: Verdana-Bold, size: 9.0}
+
+# Bold labels inside tables ("In severely affected patients"). Checked on PDF page 68.
+table_sublabel_styles:
+  - {font: Souvenir-Bold, size: 9.2}
+
+# Running headers and footers, removed in step 4 after the chapter is read from them.
+# Checked on PDF pages 67 and 68 only. Step 4 lists everything it removes.
+running_header:
+  rotated: true
+  patterns:
+    - '^CHAPTER\s*\d+\s*:'
+    - '^Uganda Clinical Guidelines 2023$'
+page_number_footer:
+  font: BrandingSF-Medium
+  size: 9.0
+
+# The glyphs the book uses as bullets (a Wingdings font). Replaced with a plain bullet in step 4.
+bullet_font: Wingdings-Regular
+
+# The code printed on a condition heading, in the spellings seen in the book.
+icd_label_pattern: 'ICD\s*-?\s*10\s*(CODE|Code|code)?\s*:?'
+
+# A table is a treatment table when these header words appear together. Checked on PDF page 68.
+treatment_table_header_words: [TREATMENT, LOC]
+
+allowed_loc_values: [HC1, HC2, HC3, HC4, H, RR, NR]   # odd values seen (N, V, HC2V) are reported, not accepted
+
+thresholds:
+  sideways_page_share: 0.3               # more than 30% of lines rotated = a sideways page
+  blank_page_max_lines: 8                # fewer lines than this = nearly blank

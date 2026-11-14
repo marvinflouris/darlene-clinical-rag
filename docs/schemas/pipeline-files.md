@@ -30,10 +30,11 @@ A data dictionary for the pipeline. Each step reads the previous step's file and
 
 ## Review reports (generated, in `data/reports/`)
 
-- `condition_review.csv` (step 3): flagged conditions.
+- `condition_review.csv` (step 3): flagged conditions, and numbered bold lines in styles that are not configured.
 - `removed_report.csv` (step 4): what cleaning removed.
 - `hard_table_candidates.csv` (step 8): candidate hard tables for people to review.
-- `check_report.csv` (step 10): chunks that failed a check, with the reason.
+- `label_review.csv` (step 5): label words in fonts that are not configured, and short bold lines it did not recognise.
+- `check_report.csv` (step 10): chunks that failed a check, conditions with no recognised labels, and unusually long chunks, with the reason.
 
 ## Hand-made files (tracked by Git)
 

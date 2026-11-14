@@ -71,6 +71,7 @@ The owner is still learning Python. Write simple, readable code: plain syntax, s
 - A dash that means "no dose" is never turned into 0.
 - Unresolved problems go to a review report. Do not silently pick one version of a duplicate section (ADR-021).
 - "Not covered" is a valid answer. Never guess (ADR-005).
+- Unrecognised patterns (an unknown font style, an unmapped label) are reported in the review files and never silently decided (ADR-027).
 
 ## Secrets and data
 

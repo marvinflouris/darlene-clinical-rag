@@ -1,4 +1,16 @@
-# Maps the labels printed in the book to one fixed list of section types.
-# Example format (commented out):
-# causes: [Cause, Causes]
-# investigations: [Investigation, Investigations]
+# Maps the bold label words printed in the book to one fixed list of section types (ADR-006).
+# Matching ignores capitals and a trailing colon.
+# Any other label becomes "other", keeps its printed words in section_path, and is listed in
+# data/reports/label_review.csv. Lines before the first label are the "definition".
+
+causes: [cause, causes]
+clinical_features: [clinical features]    # also any label starting with "clinical features of"
+differential_diagnosis: [differential diagnosis]
+investigations: [investigation, investigations]
+management: [management, treatment]       # "treatment" only as a standalone label, never the TREATMENT / LOC table header
+prevention: [prevention]
+notes: [note, notes]
+complications: [complications]
+
+starts_with:
+  clinical_features: ["clinical features of"]

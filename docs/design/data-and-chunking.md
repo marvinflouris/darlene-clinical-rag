@@ -54,6 +54,7 @@ Eleven steps, each writing its own file: extract lines, flag pages, find conditi
 ## 8. Checks
 
 Step 10 checks that every chunk has its required fields, that values are allowed (for example LOC from the known set), that every parent exists, and that no source text was lost: every piece of a condition's text must end up in a chunk or on the deliberate-drop list. Failures go to a report and not into the final file. Tests use golden pages (see `tests/README.md`).
+Unrecognised patterns are reported and never silently decided (ADR-027). Step 3 lists numbered bold lines whose style is not configured as a heading. Step 5 lists known label words in a font that is not configured, and short bold lines it does not recognise, in data/reports/label_review.csv. Step 10 also lists conditions with no recognised labels and unusually long chunks.
 
 ## 9. Not decided yet
 
