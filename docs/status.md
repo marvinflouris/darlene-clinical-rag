@@ -17,7 +17,8 @@ Stage 1: design and parsing plan. The owner's five stages are:
 - Audited the structure of the UCG PDF: 1,161 pages, a readable text layer, no bookmarks, and printed page = PDF page minus 66.
 - Built a first condition list (generated, not yet reviewed): 477 entries and 70 section headings. 291 entries have their own ICD-10 code, 87 inherit one from a parent entry, and 99 have none. 172 entries carry at least one review flag.
 - Designed the chunk metadata: 17 fields in four groups ([schemas/chunk-metadata.md](schemas/chunk-metadata.md)). The `population` field was dropped by ADR-026.
-- Recorded the decisions as ADR-001 to ADR-027: 24 accepted and 3 proposed (ADR-017, 019, 020). ADR-012 is partly replaced by ADR-026.
+- Recorded the decisions as ADR-001 to ADR-028: 25 accepted and 3 proposed (ADR-017, 019, 020). ADR-012 is partly replaced by ADR-026.
+- Chose the dependencies and the Python version (ADR-028): pymupdf, pyyaml, pytest (dev only) and Python 3.12.
 - Wrote the config files with checked facts (settings, drop pages, section labels) and ADR-027 (report unrecognised patterns).
 - Created the repository skeleton, the README and the config placeholders.
 - Received the expert question sets: 30 target questions and 50 baseline questions. The expected answers are not filled in yet.
@@ -35,13 +36,11 @@ Stage 1: design and parsing plan. The owner's five stages are:
 - Stage 3 choices: the LLM, the embedding model, the vector store, where parent chunks are stored, and the details of ADR-017, 019 and 020.
 - The frontend.
 - The license.
-- The dependency list and the Python version (agree the list, research the versions, let uv resolve them).
 
 ## Next steps
 
-1. Agree the dependency list and the Python version. Nothing is installed before this.
-2. Before parser design, revisit the hard-table plan: pointer chunks with curated_id, the practitioner reads the full table, and any vision-model simplification is done and checked in the preparation stage so the main LLM stays text-only.
-3. Write the plan for step 1 and get it approved. Code and tests follow phase by phase, with the review reports read after each step.
+1. Before parser design, revisit the hard-table plan: pointer chunks with curated_id, the practitioner reads the full table, and any vision-model simplification is done and checked in the preparation stage so the main LLM stays text-only.
+2. Write the plan for step 1 and get it approved. Code and tests follow phase by phase, with the review reports read after each step.
 
 ## Risks to watch
 

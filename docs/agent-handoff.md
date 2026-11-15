@@ -4,6 +4,16 @@ Shared notes between coding sessions, so the next agent knows what the last one 
 
 ## Entries
 
+### 2026-11-16
+
+- Tool or agent: Copilot SDK
+- Task: Add ADR-028 and install the approved dependencies with Python 3.12.
+- Files changed: `AGENTS.md`, `docs/adrs/ADR-028-dependencies-and-python-version.md`, `docs/adrs/README.md`, `docs/status.md`, `docs/agent-exceptions.md`, `docs/agent-handoff.md`, `pyproject.toml`, `uv.lock`, and `.python-version`.
+- Decisions made: ADR-028.
+- Protected files touched: `AGENTS.md`, `pyproject.toml`, and `uv.lock`, with the owner's approval recorded in `docs/agent-exceptions.md`.
+- Not done, and what is pending: No parser code or tests were changed; the full test suite was not run.
+- Open questions for the owner: None.
+
 ### 2026-11-14
 
 - Tool or agent: Copilot SDK

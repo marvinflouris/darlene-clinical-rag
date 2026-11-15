@@ -61,6 +61,7 @@ If a task needs a protected file, if two documents disagree, or if you are not s
 ## Code style
 
 The owner is still learning Python. Write simple, readable code: plain syntax, simple comments, loops instead of nested comprehensions, small functions, clear names. Each pipeline step is one file that reads one file and writes one file (see `docs/schemas/pipeline-files.md`).
+- Approved dependencies: pymupdf, pyyaml and pytest (development only). Any other dependency needs the owner's approval (ADR-028). Import PyMuPDF as `pymupdf`, never `fitz`.
 
 ## Design rules that must not be broken
 

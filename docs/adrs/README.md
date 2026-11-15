@@ -36,3 +36,4 @@ Rules:
 - [ADR-025](ADR-025-eleven-step-pipeline.md): An 11-step pipeline: each script reads the previous file and writes its own (accepted)
 - [ADR-026](ADR-026-drop-population-field.md): Drop population from the chunk metadata (accepted)
 - [ADR-027](ADR-027-report-unrecognised-patterns.md): Report unrecognised patterns instead of deciding silently (accepted)
+- [ADR-028](ADR-028-dependencies-and-python-version.md): Dependencies and Python version for the first pipeline steps (accepted)
